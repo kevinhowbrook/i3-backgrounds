@@ -1,4 +1,4 @@
-# Unsplash Backgrounds
+# i3 Backgrounds
 
 ## Description
 
