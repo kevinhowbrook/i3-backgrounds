@@ -7,7 +7,7 @@ import subprocess
 from config import ACCESS_KEY
 
 BASE_URL = "https://api.unsplash.com/photos/random"
-QUERY = "mountains dark"  # Change this to your desired hashtag
+QUERY = "space,mountains,stars,rain,ducks,hiking,fog,storms"  # Change this to your desired hashtag(s)
 
 # Directory to save downloaded images
 IMAGE_DIR = "~/shared/i3-backgrounds/images"  # Change this to your preferred directory
@@ -16,10 +16,11 @@ IMAGE_DIR = "~/shared/i3-backgrounds/images"  # Change this to your preferred di
 def download_image():
     # Set headers for the API request
     headers = {"Authorization": f"Client-ID {ACCESS_KEY}"}
-
+    query = QUERY.split(",")
+    query = random.choice(query)
     # Build the API request URL
     params = {
-        "query": QUERY,
+        "query": query,
         "orientation": "landscape",
         "count": 1,
         "content_filter": "high",  # Optionally, filter for high-quality content
